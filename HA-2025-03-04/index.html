@@ -10,15 +10,25 @@
             textfeld.innerHTML="Button wurde betätigt"
         }
    
-        function deleteText(){
+        function deleteText() {
             let textfeld = document.getElementById("textfeld");
             textfeld.innerHTML = "";
         }
+
+        function changeColor() {
+            let body = document.getElementById("bodyElement");
+            if (body.style.backgroundColor==="green") {
+                body.style.backgroundColor="red";
+            } else {
+                body.style.backgroundColor="green";
+            }
+        }
     </script>
 </head>
-<body>
+<body id="bodyElement" style="background-color: white;">
     <button onclick="buttonClicked()">Text anzeigen</button>
     <button onclick="deleteText()">Text löschen</button>
+    <button onclick="changeColor()">NICHT KLICKEN!</button>
     <h1 id="textfeld"></h1>
 </body>
 </html>
