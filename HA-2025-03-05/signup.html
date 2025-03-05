@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Einführung</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="signup.css" />
+    <script src="./signup.js"></script>
+  </head>
+  <body>
+    <h1>Registrierung</h1>
+    <nav>
+      <ul class="nav-list">
+          <li><button class="btn"><a href="index.html">Startseite</a></button></li>
+          <li><button class="btn"><a href="login.html">Login</a></button></li>
+          <li><button class="btn"><a href="#">Registrieren</a></button></li>
+      </ul>
+    </nav>
+    <div id="box">Hier kannst Du Dich registrieren</div>
+    <input id="email" placeholder="Bitte E-Mail eingeben" />
+    <input id="password" placeholder="Bitte Passwort eingeben" />
+    <input id="repeatpassword" placeholder="Bitte Passwort wiederholen" />
+    <input id="firstname" placeholder="Dein Vorname" />
+    <input id="lastname" placeholder="Dein Nachname" />
+    <button onclick="onRegistr()">Registrieren</button>
+  </body>
+</html>
