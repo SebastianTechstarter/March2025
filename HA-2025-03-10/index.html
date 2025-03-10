@@ -5,12 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spaß mit Listen</title>
     <script src="uebung.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input id="userInput" placeholder="Put in">
     <button onclick="setListContent()">Statische Liste laden</button>
     <br>
-    <button onclick="setUserInputList()">Liste auslesen</button>
+    <div id="listenInput">
+        <input id="userInput" placeholder="Put in a list of arguments, divided by comma.">
+        <button onclick="setUserInputList()">Liste auslesen</button>
+    </div>
+    <br>
+    <!--Aufgabe 1: eine Item-hinzufügen-Funktion-->
+    <div id="einzelnerInput">
+        <input id="singleInput" placeholder="Put a single item here.">
+        <button onclick="soloInput()">Item hinzufügen</button>
+    </div>
+    <!--Aufgabe 2: letzten Eintrag aufheben-->
+    <div id="killLast">
+        <button onclick="killsLast()">Letzten Eintrag löschen</button>
+    </div>
+    <!--Taste an jedem Element, die dieses löscht-->
+    <div id="soloKill">
+        <button onclick="deleteItem()">Löschen</button>
+    </div>
     <div id="Liste"></div>
 </body>
 </html>
+
+
