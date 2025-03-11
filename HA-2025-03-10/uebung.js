@@ -4,15 +4,10 @@
 let myList= ["eins","zwei", "drei"]
 
 function createHTMLList(liste) {
-    // let ergebnis = "";
-    let htmlElements=liste.map((listItem, index) =>
-         `<li>${listItem}</li>`
+    let htmlElements = liste.map((listItem, index) => 
+        `<li>${listItem} <button onclick="deleteItem(${index})">Eintrag löschen</button></li>`
     );
-    // console.log(htmlElements);
-    let flatList=htmlElements.toString().replaceAll(",", "");
-    // console.log(flatList);
-    let ergebnis = `<ul>${flatList}</ul>`;
-    return ergebnis;
+    return `<ul>${htmlElements.join("")}</ul>`; // Fügt alle Elemente zusammen
 }    
 
 function setListContent() {
@@ -47,6 +42,8 @@ function killsLast() {
 
 // Funktion, die einzelne Elemente löschen kann.
 function deleteItem(index) {
-    myList.splice(index, 1);
-    document.getElementById("Liste").innerHTML = createHTMLList(myList);
+    if (index >= 0 && index < myList.length) { // Prüfen, ob der Index gültig ist
+        myList.splice(index, 1); // Entfernt genau das gewählte Element
+        setListContent(); // Aktualisiert die Liste
+    }
 }
