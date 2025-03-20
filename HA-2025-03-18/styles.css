@@ -1,0 +1,14 @@
+body {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 75% auto;
+    height: 100vh;
+}
+
+div {
+    border: 1px solid black;
+}
+
+#drei {
+    grid-column: 1 / -1;
+}

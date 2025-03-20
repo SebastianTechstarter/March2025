@@ -1,0 +1,78 @@
+body {
+    display: grid;
+    grid-template-columns: 15% 40% 45%;
+    grid-template-rows: 10% 10%;
+    height: 100vh;
+    color: white;
+    background-color: black;
+}
+
+#suchleiste {
+    display: flex;
+    border-radius: 2px;
+    grid-column: 2 / -1;
+    margin-left: 20vw;
+    background-color: gray;
+    color: white;
+}
+
+header {
+    border: 1px solid red;
+}
+
+main {
+    display: grid;
+}
+
+.sidebar {
+    grid-column: 1 / 2;
+}
+
+#headerone {
+    grid-column: 1 / -1;
+    height: 100%;
+}
+
+#headerone::before {
+    content: url(Screenshot\ 2025-03-18\ 200425.png);
+    margin-left: 10px;
+    margin-top: 10vh
+}
+
+#headertwo {
+    grid-column: 1 / -1;
+    height: 100%;
+}
+div {
+    border: 1px solid red;
+}
+
+.header {
+    margin-top: auto;
+}
+
+li {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li::before {
+    content: "🎞️";
+}
+
+h4 {
+    padding: 10px;
+}
+
+.videos {
+    display: flex;
+    width: 83vw;
+}
+
+.video {
+    width: 37vw;
+}
+
+.info {
+    width: 48vw;
+}

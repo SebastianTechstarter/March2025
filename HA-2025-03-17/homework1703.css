@@ -1,0 +1,48 @@
+/*https://www.w3schools.com/css/css_combinators.asp
+- Descendent Combinator (Mit einem Leerzeichen)*/
+
+div p {
+    background-color: red;    
+}
+/* - Child Combinator */
+
+ul > li {
+    color: purple;
+}
+
+/* Unterschied zwischen Descendent Combinator und Child Combinator:
+der Descendant Combinator verändert alle "p" in "div", egal wie tief verschachtelt. Der Child Combinator betrifft nur die direkten Children, bewegt sich also nur eine Ebene tiefer. */
+
+/*https://www.w3schools.com/css/css_pseudo_classes.asp
+- Hover Pseudoclass */
+button:hover {
+    transform: rotate(360deg);
+}
+
+/*- Eine weitere Pseudoclass (egal, ob focus, first-child, nth-child oÄ.)*/
+a:visited {
+    color: black;
+}
+
+/*https://www.w3schools.com/css/css_pseudo_elements.asp
+- Marker Pseudoelement*/
+
+li::marker {
+    content: "📜";
+    color: red;
+}
+  
+/*- Selection Pseudoelement*/
+
+h2::selection {
+    background-color: aliceblue;
+    color: darkblue;
+}
+
+/*https://www.w3schools.com/css/css_attribute_selectors.asp
+- Ein Beliebiger Attributselektor*/
+
+a[href] {
+    color: aliceblue;
+    font-weight: bold;
+}
