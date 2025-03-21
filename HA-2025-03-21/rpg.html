@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-RPG</title>
+    <script src="rpg2.js"></script>
+</head>
+<body>
+    <h1>Herzlich Willkommen!</h1>
+    <h3>Hier entsteht ein interaktives Textabenteuer</h3>
+    <img src="./images/bild1.png" alt="bild" width="500px">
+    <br>
+    <button id="start" onclick="newGame()">Neues Spiel starten</button>
+    
+    <div id="sammlung">
+        <div id="inputContent"></div>
+        <div id="characterInfo">
+            <h2>Charakter-Info</h2>
+            <p><strong>Welt:</strong> <span id="worldName"></span></p>
+            <p><strong>Name:</strong> <span id="charName"></span></p>
+            <p><strong>Klasse:</strong> <span id="charClass"></span></p>
+            <p><strong>Rüstung:</strong> <span id="charArmor"></span></p>
+            <p><strong>Waffe:</strong> <span id="charWeapon"></span></p>
+        </div>
+    </div>
+</body>
+</html>

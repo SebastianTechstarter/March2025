@@ -81,6 +81,6 @@ else {
     alert ("Wähle bitte eine der drei Klassen")
 }
 
-alert (`"Fassen wir noch einmal zusammen: Du heißt ${myName} und bist ein ${myClass}. \n 
+console.log (`"Fassen wir noch einmal zusammen: Du heißt ${myName} und bist ein ${myClass}. \n 
     Du trägst ${myArmor} und Deine Waffe ist ${myWeapon}."`)
 alert (`"${myName}, Du bist nun bereit, Dich den Herausforderungen von ${newWorld} zu stellen!"`)
