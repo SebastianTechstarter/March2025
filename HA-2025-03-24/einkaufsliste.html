@@ -9,9 +9,23 @@
 </head>
 <body>
     <h1>Einkaufsliste : 🛒</h1>
-    <input type="text" id="artikel" placeholder="Artikelname...">
-    <input type="number" id="anzahl" placeholder="Anzahl...">
-    <input type="number" id="preis" placeholder="Preis pro Stück...">
+    <input type="number" id="budget" placeholder="Wie hoch ist das Budget?"/>
+    <br>
+    <div>
+        <p id="restBudget">Restliches Budget: 0.00 €</p>
+    </div>
+    <input type="text" id="artikel" placeholder="Artikelname..."/>
+    <input type="number" id="anzahl" placeholder="Anzahl..."/>
+    <input type="number" id="preis" placeholder="Preis pro Stück..."/>
+    <select name="Kategorie" id="kategorie">
+        <option value="Sonstiges">📜Sonstiges</option>
+        <option value="Obst">🍎Obst</option>
+        <option value="Gemüse">🥦Gemüse</option>
+        <option value="Gewürze">🌶️Gewürze</option>
+        <option value="Milchprodukte">🍼Milchprodukte</option>
+        <option value="Getreideprodukte">🍞Getreideprodukte</option>
+        <option value="Tiefkühlprodukte">🧊Tiefkühlprodukte</option>
+    </select>
     <button id="addButton">Hinzufügen</button>
     <button id="deleteAll">Alles löschen</button>
     <ul id="liste"></ul>
