@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SWapi</title>
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-<!--   <input type="text" id="userInput">
-    <button id="searchButton">Suchen</button> -->
-    <div id="output"></div>
+    <div class="gridbox">
+        <div class="search-container">
+            <input type="text" id="userInput" placeholder="Charaktersuche...">
+            <button id="searchButton">Suchen</button>
+            <div id="output"></div>
+        </div>
+        <div class="search-container">
+            <input type="text" id="shipInput" placeholder="Fahrzeugsuche...">
+            <button id="shipSearchButton">Suchen</button>
+            <div id="output1"></div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,18 @@
+.gridbox {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-row: auto;
+    gap: 20px;
+}
+
+.search-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-container div {
+    grid-column: span 2;
+    margin-top: 10px;
+}
