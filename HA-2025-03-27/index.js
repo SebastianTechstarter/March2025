@@ -11,9 +11,22 @@ const tiere = [
     {id:6, name: "Herbert", art: "Wellensittich", geschlecht: "M", alter:2},
 ];
 
+// Hilfsfunktion
+function readFile() {
+    const data = fs.readFileSync("tiere.json", "utf-8");
+    return JSON.parse(data);
+}
+
+function writeFile(data) {
+    fs.writeFileSync("tere.json", JSON.stringify(data,null,2));
+}
+
+
+
 //   1.    GET /tiere
 //→ Gibt eine Liste aller Tiere zurück
 app.get("/tiere", (req,res) => {
+    const tiere = readFile();
     res.json(tiere);
 });
 
