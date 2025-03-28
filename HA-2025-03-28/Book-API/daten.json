@@ -1,38 +1,38 @@
 [
-    {
-        "id": 1,
-        "author": "Tolkien",
-        "title": "Herr der Ringe - die Gefährten",
-        "pages": "enough"
-    },
-    {
-        "id": 2,
-        "author": "Tolkien",
-        "title": "Herr der Ringe - die zwei Türme",
-        "pages": "enough"
-    },
-    {
-        "id": 3,
-        "author": "Tolkien",
-        "title": "Herr der Ringe - die Rückkehr des Königs",
-        "pages": "enough"
-    },
-    {
-        "id": 4,
-        "author": "Tolkien",
-        "title": "Der kleine Hobbit",
-        "pages": "enough"
-    },
-    {
-        "id": 5,
-        "author": "Stoker",
-        "title": "Dracula",
-        "pages": "enough"
-    },
-    {
-        "id": 6,
-        "author": "Shelley",
-        "title": "Frankenstein",
-        "pages": "enough"
-    }
+  {
+    "id": 1,
+    "author": "Tolkien",
+    "title": "Herr der Ringe - die Gefährten",
+    "pages": "enough"
+  },
+  {
+    "id": 2,
+    "author": "Tolkien",
+    "title": "Herr der Ringe - die zwei Türme",
+    "pages": "enough"
+  },
+  {
+    "id": 3,
+    "author": "Tolkien",
+    "title": "Herr der Ringe - die Rückkehr des Königs",
+    "pages": "enough"
+  },
+  {
+    "id": 4,
+    "author": "Tolkien",
+    "title": "Der kleine Hobbit",
+    "pages": "enough"
+  },
+  {
+    "id": 5,
+    "author": "Stoker",
+    "title": "Dracula",
+    "pages": "enough"
+  },
+  {
+    "id": 6,
+    "author": "Shelley",
+    "title": "Frankenstein",
+    "pages": "enough"
+  }
 ]

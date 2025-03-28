@@ -3,15 +3,94 @@
 //   2.    Hilfsfunktionen: readData() und writeData()
 //   3.    Implementiere folgende Routen:
 
+const express = require("express");
+const app = express();
+const fs = require("fs");
+app.use(express.json());
+
+function readData() {
+    const data = fs.readFileSync("daten.json", "utf-8");
+    return JSON.parse(data);
+}
+
+function writeData(data) {
+    fs.writeFileSync("daten.json", JSON.stringify(data, null, 2));
+}
+
 // GET /books
+app.get("/books", (req, res) => {
+    const books = readData();
+    res.json(books);
+});
+
 // POST /books
+app.post("/books", (req, res) => {
+    const books = readData();
+    const {author, title} = req.body;
+
+    if(author && title) {
+        const newBook = {
+            id: books.length +1,
+            author: author,
+            title: title
+        }
+        books.push(newBook);
+        writeData(books);
+        res.status(201).json(newBook);
+    }
+    else {
+        res.send("Eingabe unvollständig!")
+    }
+});
+
 // PUT /books/:id
+app.put("/books/:id", (req, res) => {
+    const id = req.params.id;
+    const books = readData();
+    const newTitle = req.body.title;
+
+    const foundBook = books.find(book => book.id == id);
+    if(!foundBook) {
+        res.send ("Buch nicht gefunden")
+    }
+    foundBook.title = newTitle;
+    writeData(books);
+    res.json(foundBook);
+});
+
 // DELETE /books/:id
+app.delete("/books/:id", (req, res) => {
+    const id = req.params.id;
+    const books = readData();
+    const index = books.findIndex(book => book.id ==id);
+
+    if(index === -1) {
+        res.send("Dieses Buch wurde nicht gefunden")
+    }
+
+    books.splice(index, 1);
+    writeData(books);
+    res.json();
+    res.send("Buch gelöscht");
+});
 
 // Implementiere zusätzlich eine GET-Route mit einer Suchfunktion über Query-Parameter:
 //   •    GET /books/search?titel=abc → z. B. Suche nach Kategorie, Art, Titel o. ä.
+app.get("/books/search", (req, res) => {
+    const {titel} = req.query;
+    const books = readData();
+
+    const filteredBooks = books.filter(book => book.title.toLowerCase().includes(titel.toLocaleLowerCase())
+    );
+
+    res.json(filteredBooks);
+});
 
 // Zusatzaufgabe (optional)
 
 // Baue eine Validierung ein: z. B. Name darf nicht leer sein, Alter muss eine Zahl sein, etc.
 // Füge eine Logik ein, die verhindert, dass doppelte Namen gespeichert werden.
+
+app.listen(5005, () => {
+    console.log("Der Server läuft nun auf Port 5005")
+});
