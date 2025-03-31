@@ -6,6 +6,7 @@
 const express = require("express");
 const app = express();
 const fs = require("fs");
+const { title } = require("process");
 app.use(express.json());
 
 function readData() {
@@ -19,14 +20,28 @@ function writeData(data) {
 
 // GET /books
 app.get("/books", (req, res) => {
-    const books = readData();
-    res.json(books);
+    try {
+        const books = readData();
+        res.json(books);
+    } catch (err) {
+        res.status(500).json({error: `Internal Server Error: ${err}`});
+    }
 });
 
 // POST /books
 app.post("/books", (req, res) => {
     const books = readData();
     const {author, title} = req.body;
+
+    // Validierung, um leere Felder zu vermeiden
+    if (!(author && title)) {
+        res.status(400).json({error: "Autor und Titel sind Pflichtfelder!"})
+    }
+
+    const bookTaken = books.find((book) => book.author== author && book.title == title);
+    if (bookTaken) {
+        res.status(400).json({error: "Es gibt bereits ein Buch mit diesem Autoren und diesem Titel"})
+    }
 
     if(author && title) {
         const newBook = {
@@ -77,11 +92,17 @@ app.delete("/books/:id", (req, res) => {
 // Implementiere zusätzlich eine GET-Route mit einer Suchfunktion über Query-Parameter:
 //   •    GET /books/search?titel=abc → z. B. Suche nach Kategorie, Art, Titel o. ä.
 app.get("/books/search", (req, res) => {
-    const {titel} = req.query;
+    const {id, author, titel} = req.query;
     const books = readData();
-
-    const filteredBooks = books.filter(book => book.title.toLowerCase().includes(titel.toLocaleLowerCase())
-    );
+    if (id) {
+        filteredBooks = books.filter((book) => book.id.toLowerCase() == id)
+    }
+    if (author) {
+        filteredBooks = books.filter((book) => book.author.toLowerCase() == author)
+    }
+    if (title) {
+        filteredBooks = books.filter((book) => book.title.toLowerCase() == title)
+    };
 
     res.json(filteredBooks);
 });
@@ -91,6 +112,6 @@ app.get("/books/search", (req, res) => {
 // Baue eine Validierung ein: z. B. Name darf nicht leer sein, Alter muss eine Zahl sein, etc.
 // Füge eine Logik ein, die verhindert, dass doppelte Namen gespeichert werden.
 
-app.listen(5005, () => {
-    console.log("Der Server läuft nun auf Port 5005")
+app.listen(5500, () => {
+    console.log("Der Server läuft nun auf Port 5500")
 });
